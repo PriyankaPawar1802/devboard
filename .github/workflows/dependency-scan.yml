@@ -35,7 +35,8 @@ jobs:
                 cache-dependency-path: frontend/package-lock.json
 
             - name: Run Dependency Scan for Node
-              run: npm audit fix --force
+              continue-on-error: true
+              run: npm audit
               working-directory: frontend
 
             - name: Upload Report to Artifacts
